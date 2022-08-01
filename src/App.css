@@ -1,39 +1,139 @@
 .App {
+  height: 100vh;
+  display: flex;
+}
+header {
+  color: white;
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  top: 10%;
+  left: 0;
+  font-family: 'Eagle Lake', cursive;
+  text-transform: uppercase;
+  font-size: 52px;
+  line-height: 1;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.background {
+  display: block;
+  width: 120%;
+  height: 130%;
+  position: absolute;
+  top: -15%;
+  left: -10%;
+  z-index: -1;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+  animation-duration: 80s;
+  opacity: 0.9;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes slidein {
+  0% {
+    transform: scale(90%) rotate(0deg);
+  }
+  50% {
+    transform: scale(110%) rotate(10deg);
+  }
+  100% {
+    transform: scale(90%) rotate(0deg);
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.square {
+  width: 100%;
+  height: 50%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0 25%;
+  justify-content: space-between;
+}
+.square .verticalBlock {
+  width: 32%;
+  height: 100%;
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+}
+.square .verticalBlock div {
+  display: flex;
+  height: 32%;
+  background-color: rgba(255, 255, 255, 0.316);
+}
+.square .verticalBlock .numbers {
+  display: flex;
+  height: 33%;
+  width: 50px;
+  margin: 0;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  font-size: 24px;
+  font-weight: 500;
+}
+.showAnswer {
+  border: 3px solid gold;
+}
+.square .verticalBlock .leftBlock {
+  display: flex;
+  height: 100%;
+  width: 50px;
+  position: absolute;
+  flex-direction: column;
   color: white;
-}
-.square__div {
-}
-.App-link {
-  color: #61dafb;
+  top: 0;
+  left: -50px;
+  background-color: transparent !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.leftBlock .square__div {
+  height: 32%;
+  width: 100%;
+}
+.square__div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: none;
+  line-height: 1;
+  font-size: 32px;
+  font-weight: 500;
+  cursor: pointer;
+  color: white;
+}
+
+.topSymbols {
+  display: flex;
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  top: -50px;
+  color: white;
+  font-size: 24px;
+  font-weight: 500;
+  justify-content: center;
+  margin: 0;
+}
+
+.steps {
+  display: flex;
+  width: 50%;
+  height: 150px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  position: absolute;
+  left: 25%;
+  bottom: 5%;
+}
+.steps div {
+  display: flex;
+  width: calc(20% - 2px);
+  border: 1px solid black;
+  height: 40%;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.552);
+}
+svg path {
+  transform: scale(250%);
 }
